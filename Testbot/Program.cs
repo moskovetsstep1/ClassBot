@@ -20,15 +20,10 @@
 //}
 
 using System;
-using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Args;
-using Telegram.Bot.Requests;
-using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineQueryResults;
-using Telegram.Bot.Types.ReplyMarkups;
+using Testbot.Enums;
 using Testbot.Repositories;
 
 namespace Testbot

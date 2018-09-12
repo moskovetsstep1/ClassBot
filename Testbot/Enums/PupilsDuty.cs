@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using Testbot.Repositories;
 
-namespace Testbot
+namespace Testbot.Enums
 {
     public class PupilsDuty
     {
         public string GenerateDutyNow(int telegramUserId)
         {
-            List<string> duties= new List<string>
+            List<string> duties = new List<string>
             {
                 "Надя",
                 "Марина",
@@ -32,6 +32,7 @@ namespace Testbot
                 "Ковбаса",
                 "Московець",
             };
+
             UserRepository users = new UserRepository();
             int currentday = users.Load().Find(e => e.TelegramUserId == telegramUserId).DutyDay;
             return duties[currentday * 2 - 1] + duties[currentday * 2 - 2];

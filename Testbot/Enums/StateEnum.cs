@@ -1,4 +1,4 @@
-﻿namespace Testbot
+﻿namespace Testbot.Enums
 {
     public enum StateEnum
     {

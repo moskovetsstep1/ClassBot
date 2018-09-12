@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Testbot.Enums;
 
-namespace Testbot
+namespace Testbot.Models
 {
    public class User
     {
@@ -14,6 +12,13 @@ namespace Testbot
         public User()
         {
             
+        }
+
+        public User(int telegramUserId, StateEnum state, int dutyDay)
+        {
+            TelegramUserId = TelegramUserId;
+            State = state;
+            DutyDay = dutyDay;
         }
     }
 }
