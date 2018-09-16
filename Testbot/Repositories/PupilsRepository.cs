@@ -10,15 +10,18 @@ namespace Testbot.Repositories
     public class PupilsRepository
     {
         private readonly string PathFile = "Pupils.json";
-        public void NewPupil(Pupil newPupil)
+        public Pupil NewPupil(string name)
         {
             List<Pupil> pupils = new List<Pupil>();
             if (File.Exists(PathFile))
             {
                 pupils = JsonConvert.DeserializeObject<List<Pupil>>(File.ReadAllText(PathFile));
             }
-            pupils.Add(newPupil);
+             Pupil pupil = new Pupil(name);
+            pupils.Add(pupil);
+            
             File.WriteAllText(PathFile, JsonConvert.SerializeObject(pupils));
+            return pupil;
         }
         public Pupil Read(string name)
         {
@@ -30,7 +33,7 @@ namespace Testbot.Repositories
             var current = pupils.Find(e => e.Name == name);
 
             if(current == null)
-                NewPupil(new Pupil(name));
+                return NewPupil(name);
 
             return current;
         }

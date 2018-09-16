@@ -35,7 +35,7 @@ namespace Testbot.Enums
 
             UserRepository users = new UserRepository();
             int currentday = users.Load().Find(e => e.TelegramUserId == telegramUserId).DutyDay;
-            return duties[currentday * 2 - 1] + duties[currentday * 2 - 2];
+            return duties[currentday * 2 - 1] + ", " + duties[currentday * 2 - 2];
         }
     }
 }

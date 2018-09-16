@@ -8,6 +8,7 @@ namespace Testbot.Models
         public StateEnum State { get; set; }
         public string Day { get; set; }
         public int DutyDay { get; set; }
+        public Lessons ChosenDay { get; set; }
 
         public User()
         {
@@ -16,9 +17,10 @@ namespace Testbot.Models
 
         public User(int telegramUserId, StateEnum state, int dutyDay)
         {
-            TelegramUserId = TelegramUserId;
+            TelegramUserId = telegramUserId;
             State = state;
             DutyDay = dutyDay;
+            ChosenDay = Lessons.Unnamed;
         }
     }
 }

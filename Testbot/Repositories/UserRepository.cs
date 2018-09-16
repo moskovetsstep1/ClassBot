@@ -18,9 +18,7 @@ namespace Testbot.Repositories
             {
                 users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(PathFile));
             }
-
             users.Add(new User(telegramUserId, StateEnum.Default, 1));
-
             File.WriteAllText(PathFile, JsonConvert.SerializeObject(users));
         }
         public List<User> Load()

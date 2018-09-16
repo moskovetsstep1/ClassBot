@@ -7,6 +7,9 @@
         SelectPassLesson,
         PassDay,
         PassLesson,
-        Default
+        Default,
+        SendMessType,
+        SelectSendMessDay,
+
     }
 }
